@@ -1,13 +1,16 @@
 import React, { StrictMode } from "react";
 import { render } from "react-dom";
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+
 const App = () => {
     return (
         <>
-            <p>
-                The application has been cleaned up of all the extraneous stuff
-                you'll likely never use
-            </p>
+            <Header />
+            <Home />
+            <Footer />
         </>
     );
 };
