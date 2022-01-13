@@ -1,9 +1,9 @@
 const Header = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <header className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
                 <a className="navbar-brand" href="#">
-                    Navbar
+                    React training
                 </a>
                 <button
                     className="navbar-toggler"
@@ -16,25 +16,22 @@ const Header = () => {
                 >
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarContent">
+                <nav className="collapse navbar-collapse" id="navbarContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <a
-                                className="nav-link active"
+                                className="nav-link"
                                 aria-current="page"
                                 href="#"
                             >
                                 Home
                             </a>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link" href="#">
                                 Link
                             </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled">Disabled</a>
-                        </li>
+                        </li> */}
                     </ul>
                     <form className="d-flex">
                         <input
@@ -50,9 +47,9 @@ const Header = () => {
                             Search
                         </button>
                     </form>
-                </div>
+                </nav>
             </div>
-        </nav>
+        </header>
     );
 };
 
