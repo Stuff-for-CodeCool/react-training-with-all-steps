@@ -7,6 +7,7 @@ import "./index.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import Posts from "./components/Posts";
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />}></Route>
+                <Route path="/posts" element={<Posts />}></Route>
             </Routes>
             <Footer />
         </>

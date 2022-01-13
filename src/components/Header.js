@@ -29,11 +29,15 @@ const Header = () => {
                                 Home
                             </Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <Link className="nav-link" to="/">
-                                Link
+                        <li className="nav-item">
+                            <Link
+                                className="nav-link"
+                                aria-current="page"
+                                to="/posts"
+                            >
+                                Posts
                             </Link>
-                        </li> */}
+                        </li>
                     </ul>
                     <form className="d-flex">
                         <input
