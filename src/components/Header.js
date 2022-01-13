@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
     return (
         <header className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
-                <a className="navbar-brand" href="#">
+                <Link className="navbar-brand" to="/">
                     React training
-                </a>
+                </Link>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -19,18 +21,18 @@ const Header = () => {
                 <nav className="collapse navbar-collapse" id="navbarContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a
+                            <Link
                                 className="nav-link"
                                 aria-current="page"
-                                href="#"
+                                to="/"
                             >
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         {/* <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <Link className="nav-link" to="/">
                                 Link
-                            </a>
+                            </Link>
                         </li> */}
                     </ul>
                     <form className="d-flex">

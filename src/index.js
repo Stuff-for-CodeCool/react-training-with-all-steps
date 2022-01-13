@@ -1,5 +1,6 @@
 import React, { StrictMode } from "react";
 import { render } from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./index.css";
 
@@ -11,7 +12,9 @@ const App = () => {
     return (
         <>
             <Header />
-            <Home />
+            <Routes>
+                <Route path="/" element={<Home />}></Route>
+            </Routes>
             <Footer />
         </>
     );
@@ -19,7 +22,9 @@ const App = () => {
 
 render(
     <StrictMode>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </StrictMode>,
     document.getElementById("root")
 );
