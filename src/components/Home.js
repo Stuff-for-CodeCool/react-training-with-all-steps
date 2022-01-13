@@ -24,7 +24,7 @@ const Home = ({ limit = 12 }) => {
     return (
         <main className="container my-3">
             {posts.length ? (
-                <div class="row g-3">
+                <div className="row g-3">
                     {posts.map((p, i) => (
                         <div className="col" key={i}>
                             <div className="card h-100">
