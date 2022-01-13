@@ -1,17 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, {StrictMode} from 'react';
+import { render } from 'react-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
+const App = () => {
+  return <>
+    <p>The application has been cleaned up of all the extraneous stuff you'll likely never use</p>
+  </>
+}
+
+render(
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
