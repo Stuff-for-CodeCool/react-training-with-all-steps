@@ -1,6 +1,10 @@
+import { memo, useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserStateContext } from "..";
 
-const Header = () => {
+const Header = memo(() => {
+    const { user } = useContext(UserStateContext);
+
     return (
         <header className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -39,24 +43,38 @@ const Header = () => {
                             </Link>
                         </li>
                     </ul>
-                    <form className="d-flex">
-                        <input
-                            className="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                        <button
-                            className="btn btn-outline-success"
-                            type="submit"
-                        >
-                            Search
-                        </button>
-                    </form>
+                    <ul className="navbar-nav mb-2 mb-lg-0">
+                        {user ? (
+                            <>
+                                <li className="nav-item navbar-text">
+                                    Welcome
+                                </li>
+                                <li className="nav-item">
+                                    <Link
+                                        className="nav-link"
+                                        aria-current="page"
+                                        to="/logout"
+                                    >
+                                        Log out
+                                    </Link>
+                                </li>
+                            </>
+                        ) : (
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link"
+                                    aria-current="page"
+                                    to="/login"
+                                >
+                                    Log in
+                                </Link>
+                            </li>
+                        )}
+                    </ul>
                 </nav>
             </div>
         </header>
     );
-};
+});
 
 export default Header;
