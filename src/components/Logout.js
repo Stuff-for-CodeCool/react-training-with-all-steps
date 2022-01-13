@@ -1,11 +1,11 @@
-import { memo, useContext } from "react";
 import { Navigate } from "react-router-dom";
-import { UserStateContext } from "..";
+import { useAtom } from "jotai";
+import state from "../state";
 
-const Logout = memo(() => {
-    const { user, setUser } = useContext(UserStateContext);
+const Logout = () => {
+    const [user, setUser] = useAtom(state.user);
     setUser(false);
     return <Navigate to="/" />;
-});
+};
 
 export default Logout;

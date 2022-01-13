@@ -1,9 +1,10 @@
-import { memo, useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserStateContext } from "..";
+import { useAtom } from "jotai";
+import state from "../state";
 
-const Header = memo(() => {
-    const { user } = useContext(UserStateContext);
+
+const Header = () => {
+    const [user] = useAtom(state.user);
 
     return (
         <header className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -75,6 +76,6 @@ const Header = memo(() => {
             </div>
         </header>
     );
-});
+};
 
 export default Header;

@@ -1,9 +1,4 @@
-import React, {
-    createContext,
-    StrictMode,
-    useMemo,
-    useState,
-} from "react";
+import React, { StrictMode } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -18,23 +13,9 @@ import NotFound from "./components/NotFound";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 
-const userInitialState = { user: null, setUser: undefined };
-export const UserStateContext = createContext(userInitialState);
-
-const GlobalContextProvider = ({ children }) => {
-    const [user, setUser] = useState(userInitialState.user);
-    const userContextValue = useMemo(() => ({ user, setUser }), [user]);
-
-    return (
-        <UserStateContext.Provider value={userContextValue}>
-            {children}
-        </UserStateContext.Provider>
-    );
-};
-
 const App = () => {
     return (
-        <GlobalContextProvider>
+        <>
             <Header />
             <Routes>
                 <Route path="/" element={<Home />}></Route>
@@ -45,7 +26,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />}></Route>
             </Routes>
             <Footer />
-        </GlobalContextProvider>
+        </>
     );
 };
 

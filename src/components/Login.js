@@ -1,10 +1,12 @@
-import { memo, useContext, useState } from "react";
+import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { UserStateContext } from "..";
+import { useAtom } from "jotai";
+import state from "../state";
 
-const Login = memo(() => {
-    const { user, setUser } = useContext(UserStateContext);
+const Login = () => {
+    const [user, setUser] = useAtom(state.user);
     const [error, setError] = useState(null);
+    const [canRedirect, setCanRedirect] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,10 +14,11 @@ const Login = memo(() => {
         const username = e.target.username.value;
         const password = e.target.password.value;
 
+        e.target.reset();
+
         if (username === "react" && password === "training") {
             setUser(true);
-            e.target.reset();
-            return <Navigate to="/" />;
+            setCanRedirect(true);
         } else {
             setError("Username or password incorrect");
         }
@@ -29,7 +32,9 @@ const Login = memo(() => {
         }, 350);
     };
 
-    return (
+    return canRedirect ? (
+        <Navigate to="/" />
+    ) : (
         <main className="container my-3">
             {error && (
                 <div
@@ -73,6 +78,6 @@ const Login = memo(() => {
             </form>
         </main>
     );
-});
+};
 
 export default Login;
