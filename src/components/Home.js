@@ -33,7 +33,7 @@ const Home = ({ limit = 12 }) => {
                                         {p.title}
                                     </h5>
                                     <Link
-                                        to={`/posts/${i}`}
+                                        to={`/posts/${i + 1}`}
                                         className="btn btn-primary mt-3"
                                     >
                                         See post
